@@ -1,6 +1,3 @@
-/* App-local styles. Mesh chrome (settings drawer, self-ref bar) is provided by
- * @baditaflorin/mesh-common/styles.css imported in main.tsx. */
-
 :root {
   color-scheme: dark;
 }
@@ -19,33 +16,142 @@ body,
   background: var(--mesh-bg);
   color: var(--mesh-fg);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-  -webkit-tap-highlight-color: transparent;
 }
 
-.feature-placeholder {
-  padding: 6rem 1.5rem 2rem;
-  text-align: center;
+.ttt-screen {
+  max-width: 26rem;
+  margin: 0 auto;
+  padding: 4.5rem 1.25rem 6rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 1rem;
+  align-items: center;
 }
 
-.feature-placeholder h1 {
+.ttt-header {
+  text-align: center;
+}
+
+.ttt-header h1 {
   font-size: 1.6rem;
-  margin: 0;
+  margin: 0 0 0.25rem;
   color: var(--mesh-accent);
 }
 
-.feature-placeholder p {
-  max-width: 32rem;
+.ttt-status {
   margin: 0;
   opacity: 0.85;
-  line-height: 1.5;
+  font-size: 1rem;
 }
 
-.feature-status {
+.ttt-roles {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.ttt-role {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.65rem;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--mesh-fg);
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.ttt-role.is-mine {
+  border-color: var(--mesh-accent);
+  background: rgba(16, 185, 129, 0.15);
+}
+
+.ttt-role.is-taken:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.ttt-role-mark {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.ttt-role-status {
+  opacity: 0.7;
+  font-size: 0.8rem;
+}
+
+.ttt-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 0.5rem;
+  width: min(100%, 22rem);
+  aspect-ratio: 1 / 1;
+}
+
+.ttt-cell {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--mesh-fg);
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0.6rem;
+  cursor: pointer;
+  font-size: 3rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.ttt-cell:disabled {
+  cursor: default;
+}
+
+.ttt-cell:enabled:hover {
+  border-color: var(--mesh-accent);
+}
+
+.ttt-cell.ttt-x {
+  color: #38bdf8;
+}
+
+.ttt-cell.ttt-o {
+  color: #fb7185;
+}
+
+.ttt-cell.is-win {
+  border-color: var(--mesh-accent);
+  background: rgba(16, 185, 129, 0.18);
+}
+
+.ttt-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.ttt-rematch {
+  padding: 0.5rem 1.2rem;
+  background: var(--mesh-accent);
+  color: #0e1117;
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.ttt-rematch:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.ttt-fineprint {
+  opacity: 0.55;
   font-size: 0.85rem;
-  opacity: 0.6;
-  font-variant-numeric: tabular-nums;
+  margin: 0;
 }
