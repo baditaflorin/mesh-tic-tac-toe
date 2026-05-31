@@ -1,7 +1,7 @@
 # mesh-tic-tac-toe
 
 [![pages](https://img.shields.io/badge/live-baditaflorin.github.io%2Fmesh-tic-tac-toe-10b981)](https://baditaflorin.github.io/mesh-tic-tac-toe/)
-[![version](https://img.shields.io/badge/version-0.1.0-blue)](https://github.com/baditaflorin/mesh-tic-tac-toe/blob/main/package.json)
+[![version](https://img.shields.io/badge/version-0.1.1-blue)](https://github.com/baditaflorin/mesh-tic-tac-toe/blob/main/package.json)
 [![license](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
 
 > Classic tic-tac-toe over the mesh, no account, rematch built in
